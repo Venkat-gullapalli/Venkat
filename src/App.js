@@ -126,7 +126,7 @@ function App() {
               img: sriChaitanyaImage, title: "Higher Secondary | S.S.C",
               school: "Sri Chaitanya Junior College", duration: "2020 - 2022 | Completed"
             }, {
-              img: drGowthamImage, title: "Matriculation | C.B.S.E",
+              img: drGowthamImage, title: "10th | C.B.S.E",
               school: "Dr. K.K.R’s Gowtham School", duration: "2019 - 2020 | Completed"
             }].map((edu, idx) => (
               <div className="education-card" key={idx}>
