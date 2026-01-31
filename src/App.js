@@ -41,7 +41,7 @@ function App() {
   const achievements = [
     {
       name: " Amaravati Drone Summit 2024 ",
-      description: "Awarded 3rd place at the prestigious Amaravati Drone Summit 2024 for a project on crack detection using drones. The innovative solution showcased the use of unmanned aerial vehicles (UAVs) and deep learning for automated structural health monitoring, helping to identify cracks in infrastructure with greater accuracy and efficiency.",
+      description: "Awarded 3rd place in prestigious Amaravati Drone Summit 2024 for a project on crack detection using drones. The innovative solution showcased the use of unmanned aerial vehicles (UAVs) and deep learning for automated structural health monitoring, helping to identify cracks in infrastructure with greater accuracy and efficiency.",
       image: hackathonImage
     },
     {
