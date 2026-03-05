@@ -3,6 +3,7 @@ import './App.css';
 import ResumePDF from './resume.pdf';
 import MyPhoto from './assets/venkat.jpg';
 
+// Technology Logos
 import pythonLogo from './assets/python.png';
 import reactLogo from './assets/React.png';
 import aiLogo from './assets/ai.png';
@@ -12,18 +13,16 @@ import flaskLogo from './assets/flask.png';
 import canvaLogo from './assets/canva.png';
 import figmaLogo from './assets/figma.png';
 
+// Institution & Award Images
 import klUniversityImage from './assets/kl.png';
 import sriChaitanyaImage from './assets/sri-chaitanya.jpeg';
 import drGowthamImage from './assets/dr-gowtham.jpg';
-
-
 import hackImage from './assets/hack.jpg';
 import hackathonImage from './assets/hackathon.jpg';
 import ideathonImage from './assets/ideathon.jpg'; 
 
 function App() {
   const [expandedProject, setExpandedProject] = useState(null);
-  const [expandedAchievement, setExpandedAchievement] = useState(null);
 
   const projects = [
     {
@@ -41,205 +40,159 @@ function App() {
   ];
 
   const achievements = [
-    {
-      name: " HackAP Hackathon ",
-      description: "Awarded 3rd Place at the prestigious HackAP Hackathon, organized by ElectronVibe, for a solution focused on enabling predictive maintenance through grid intelligence and infrastructure monitoring. The project leveraged intelligent monitoring and predictive analytics to support proactive infrastructure management, improving grid reliability, reducing operational risks, and optimizing maintenance planning for critical energy systems.",
-      image: hackImage
-    },
-    {
-      name: " Amaravati Drone Summit 2024 ",
-      description: "Awarded 3rd place at the prestigious Amaravati Drone Summit 2024 for a project on crack detection using drones. The innovative solution showcased the use of unmanned aerial vehicles (UAVs) and deep learning for automated structural health monitoring, helping to identify cracks in infrastructure with greater accuracy and efficiency.",
-      image: hackathonImage
-    },
-    {
-      name: " Ideathon 2023 ",
-      description: "Secured 4th place in Ideathon 2023 conducted by ACIC-KL Startups Foundation. The project demonstrated innovation in applying emerging technologies to real-world problems. Awarded a cash prize of ₹2500 as recognition for impactful idea presentation and practical feasibility.",
-      image: ideathonImage
-    }
+    { name: "HackAP Hackathon", rank: "3rd Place", image: hackImage, description: "Awarded for predictive maintenance solutions focused on infrastructure monitoring." },
+    { name: "Amaravati Drone Summit 2024", rank: "3rd Place", image: hackathonImage, description: "Recognized for innovative UAV-based crack detection using deep learning." },
+    { name: "Ideathon 2023", rank: "4th Place", image: ideathonImage, description: "Recognized for impactful idea presentation and practical feasibility." }
   ];
 
-  const toggleProject = (index) => {
-    setExpandedProject(expandedProject === index ? null : index);
-  };
+  const education = [
+    { img: klUniversityImage, school: "KL University, Guntur", degree: "B.E in Computer Science", year: "2022 - 2026 | Pursuing" },
+    { img: sriChaitanyaImage, school: "Sri Chaitanya Junior College", degree: "Higher Secondary | S.S.C", year: "2020 - 2022 | Completed" },
+    { img: drGowthamImage, school: "Dr. K.K.R’s Gowtham School", degree: "10th | C.B.S.E", year: "2019 - 2020 | Completed" }
+  ];
 
-  const toggleAchievement = (index) => {
-    setExpandedAchievement(expandedAchievement === index ? null : index);
-  };
+  // Certifications data to be displayed
+  const certifications = [
+    { title: "AWS Certified Cloud Practitioner", issuer: "AWS" },
+    { title: "Azure AI Fundamentals", issuer: "Microsoft" },
+    { title: "Linguaskill General", issuer: "Cambridge" },
+    { title: "RPA Professional 2023", issuer: "Automation Anywhere" }
+  ];
 
   return (
     <div className="App">
-      <header className="App-header">
-        <nav>
-          <div className="logo-text">
-            <img src={require('./assets/logo.png')} alt="Logo" className="logo-image" />
-            Gullapalli Venkat
-          </div>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#Projects">Projects</a></li>
-            <li><a href="#certifications">Certifications</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
+      <header className="navbar">
+        <ul>
+          <li><a href="#about">ABOUT</a></li>
+          <li><a href="#skills">SKILLS</a></li>
+          <li><a href="#education">EDUCATION</a></li>
+          <li><a href="#Projects">PROJECTS</a></li>
+          <li><a href="#certifications">CERTIFICATIONS</a></li>
+          <li><a href="#achievements">ACHIEVEMENTS</a></li>
+          <li><a href="#contact">CONTACT</a></li>
+        </ul>
       </header>
 
       <main>
-        <section id="about">
-          <h2>About</h2>
-          <div className="about-container">
-            <img src={MyPhoto} alt="Venkat" className="about-image" />
-            <div className="about-text">
-              <p>
-                I'm Venkat, a passionate Computer Science student with a strong interest in the dynamic world of technology and innovation. With a deep fascination for drone manufacturing, artificial intelligence, and the ever-evolving landscape of technology, I am committed to exploring and developing cutting-edge solutions. My curiosity drives me to discover how AI and automation can reshape industries and make an impactful difference. As I continue my journey, I am excited to collaborate with like-minded professionals, innovators, and mentors in the fields of AI, drone technology, and innovation. Let's connect and drive forward this exciting technological revolution together!
-              </p>
-              <a href={ResumePDF} target="_blank" rel="noopener noreferrer">
-                <button className="resume-button">Resume</button>
-              </a>
+        <section id="about" className="hero">
+          <div className="hero-container">
+            <div className="hero-visual">
+              <div className="glow-border">
+                <img src={MyPhoto} alt="Venkat Chowdary" className="profile-img" />
+              </div>
+            </div>
+            <div className="hero-text">
+              <h5>Hi There, I'm</h5>
+              <h1>Venkat <span>Chowdary</span></h1>
+              <p>I’m Venkat Chowdary, a Computer Science student dedicated to the intersection of AI and Robotics. My work focuses on pushing the boundaries of drone technology and automation—from designing custom UAVs to implementing YOLO-based computer vision for real-world infrastructure challenges. I’m driven by a curiosity to see how intelligent machines can reshape our world.</p>
+              <a href={ResumePDF} target="_blank" rel="noopener noreferrer" className="btn-primary">Download CV</a>
             </div>
           </div>
         </section>
 
-        <section id="skills">
-          <h2>Skills</h2>
-          <div className="skills-container">
+        <section id="skills" className="section">
+          <h2 className="heading">My <span>Skills</span></h2>
+          <div className="skills-grid">
             {[
-              { img: pythonLogo, name: 'Python' },
-              { img: reactLogo, name: 'ReactJS' },
-              { img: aiLogo, name: 'AI' },
-              { img: droneLogo, name: 'Drone' },
-              { img: javaLogo, name: 'Java' },
-              { img: flaskLogo, name: 'Flask' },
-              { img: canvaLogo, name: 'Canva' },
-              { img: figmaLogo, name: 'Figma' }
+              { img: pythonLogo, name: 'Python' }, { img: reactLogo, name: 'ReactJS' },
+              { img: aiLogo, name: 'AI' }, { img: droneLogo, name: 'Drone' },
+              { img: javaLogo, name: 'Java' }, { img: flaskLogo, name: 'Flask' },
+              { img: canvaLogo, name: 'Canva' }, { img: figmaLogo, name: 'Figma' }
             ].map(skill => (
-              <div className="skill-box" key={skill.name}>
-                <img src={skill.img} alt={skill.name} />
-                <span>{skill.name}</span>
+              <div className="skill-card" key={skill.name}>
+                <div className="icon-box"><img src={skill.img} alt={skill.name} /></div>
+                <p>{skill.name}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section id="education">
-          <h2>Education</h2>
-          <div className="education-container">
-            {[{
-              img: klUniversityImage, title: "Bachelor of Engineering in Computer Science & Engineering",
-              school: "KL University, Guntur", duration: "2022 - 2026 | Pursuing"
-            }, {
-              img: sriChaitanyaImage, title: "Higher Secondary | S.S.C",
-              school: "Sri Chaitanya Junior College", duration: "2020 - 2022 | Completed"
-            }, {
-              img: drGowthamImage, title: "10th | C.B.S.E",
-              school: "Dr. K.K.R’s Gowtham School", duration: "2019 - 2020 | Completed"
-            }].map((edu, idx) => (
-              <div className="education-card" key={idx}>
-                <img src={edu.img} alt={edu.school} />
-                <div>
-                  <h3>{edu.title}</h3>
-                  <p>{edu.school}</p>
-                  <p>{edu.duration}</p>
+        <section id="education" className="section">
+          <h2 className="heading">Education</h2>
+          <div className="edu-column">
+            {education.map((edu, idx) => (
+              <div className="edu-card" key={idx}>
+                <img src={edu.img} alt={edu.school} className="edu-logo" />
+                <div className="edu-info">
+                  <h3>{edu.school}</h3>
+                  <p>{edu.degree} | <span>{edu.year}</span></p>
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-        <section id="Projects">
-          <h2>Projects</h2>
-          <div className="projects-container">
+        <section id="Projects" className="section">
+          <h2 className="heading">Featured <span>Projects</span></h2>
+          <div className="projects-column">
             {projects.map((project, index) => (
-              <div
-                key={index}
-                className="project-card"
-                onClick={() => toggleProject(index)}
+              <div 
+                key={index} 
+                className={`project-item-card ${expandedProject === index ? 'expanded' : ''}`}
+                onClick={() => setExpandedProject(expandedProject === index ? null : index)}
               >
-                <h3 className="project-title">{project.name}</h3>
-                {expandedProject === index && (
-                  <p className="project-description">{project.description}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section id="certifications">
-          <h2>Certifications</h2>
-          <div className="timeline">
-            {[
-              {
-                title: "AWS Certified Cloud Practitioner",
-                issuer: "AWS"
-              },
-              {
-                title: "Linguaskill General",
-                issuer: "Cambridge"
-              },
-              {
-                title: "Azure AI Fundamentals",
-                issuer: "Microsoft"
-              },
-              {
-                title: "AUTOMATION ANYWHERE CERTIFIED ESSENTIALS RPA PROFESSIONAL 2023",
-                issuer: "AUTOMATION ANYWHERE"
-              }
-            ].map((cert, idx) => (
-              <div className={`timeline-item ${idx % 2 === 0 ? 'left' : 'right'}`} key={idx}>
-                <div className="timeline-content">
-                  <h3>{cert.title}</h3>
-                  <p><strong>Issued by:</strong> {cert.issuer}</p>
-                  <p>{cert.date}</p>
+                <div className="project-header">
+                  <h3>{project.name}</h3>
+                  <span className="toggle-icon">{expandedProject === index ? '−' : '+'}</span>
+                </div>
+                <div className="project-body">
+                  <p>{project.description}</p>
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-        <section id="achievements">
-          <h2>Achievements</h2>
-          <div className="achievements-container">
-            {achievements.map((achievement, index) => (
-              <div
-                key={index}
-                className="achievement-card"
-                onClick={() => toggleAchievement(index)}
-              >
-                <h3 className="achievement-title">{achievement.name}</h3>
-                {expandedAchievement === index && (
-                  <div className="achievement-details">
-                    <img src={achievement.image} alt={achievement.name} className="achievement-image" />
-                    <p className="achievement-description">{achievement.description}</p>
-                  </div>
-                )}
+        {/* ADDED CERTIFICATIONS SECTION HERE */}
+        <section id="certifications" className="section">
+          <h2 className="heading">Certifications</h2>
+          <div className="cert-grid">
+            {certifications.map((cert, i) => (
+              <div className="cert-card" key={i}>
+                <h4>{cert.title}</h4>
+                <p>Issued by: <span>{cert.issuer}</span></p>
               </div>
             ))}
           </div>
         </section>
 
-        <section id="contact">
-          <h2>Contact</h2>
+        <section id="achievements" className="section">
+          <h2 className="heading">Major <span>Achievements</span></h2>
+          <div className="achieve-gallery">
+            {achievements.map((ach, index) => (
+              <div key={index} className="achieve-box">
+                <img src={ach.image} alt={ach.name} className="achieve-bg" />
+                <div className="achieve-content">
+                  <span className="rank">{ach.rank}</span>
+                  <h4>{ach.name}</h4>
+                  <p className="detail-text">{ach.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="contact" className="section">
+          <h2 className="heading">Contact <span>Me</span></h2>
           <div className="contact-container">
-            <div>
+            <div className="contact-info">
               <p><strong>Email:</strong> venkatchowdary144256@gmail.com</p>
               <p><strong>Phone:</strong> +91 9247456666</p>
               <p><strong>Location:</strong> Vijayawada, India</p>
             </div>
-            <form>
-              <input type="text" placeholder="Your Name" required />
-              <input type="email" placeholder="Your Email" required />
-              <textarea placeholder="Your Message" rows="4" required></textarea>
-              <button type="submit">Send Message</button>
-            </form>
+            <div className="contact-form-wrapper">
+              <form className="modern-form">
+                <input type="text" placeholder="Your Name" required />
+                <input type="email" placeholder="Your Email" required />
+                <textarea placeholder="Your Message" rows="6" required></textarea>
+                <button type="submit" className="btn-gradient">SEND MESSAGE</button>
+              </form>
+            </div>
           </div>
         </section>
       </main>
 
-      <footer>
-        <p>Designed with ❤️ by Venkat</p>
-      </footer>
+      <footer><p>© 2026 Designed by Venkat Chowdary</p></footer>
     </div>
   );
 }
