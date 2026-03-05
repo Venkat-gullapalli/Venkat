@@ -85,7 +85,7 @@ function App() {
               <h5>Hi There, I'm</h5>
               <h1>Venkat <span>Chowdary</span></h1>
               <p>I’m Venkat Chowdary, a Computer Science student dedicated to the intersection of AI and Robotics. My work focuses on pushing the boundaries of drone technology and automation—from designing custom UAVs to implementing YOLO-based computer vision for real-world infrastructure challenges. I’m driven by a curiosity to see how intelligent machines can reshape our world.</p>
-              <a href={ResumePDF} target="_blank" rel="noopener noreferrer" className="btn-primary">Download CV</a>
+              <a href={ResumePDF} target="_blank" rel="noopener noreferrer" className="btn-primary">View CV</a>
             </div>
           </div>
         </section>
