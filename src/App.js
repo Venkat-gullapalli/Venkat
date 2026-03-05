@@ -46,7 +46,7 @@ function App() {
   ];
 
   const education = [
-    { img: klUniversityImage, school: "KL University, Guntur", degree: "B.E in Computer Science", year: "2022 - 2026 | Pursuing" },
+    { img: klUniversityImage, school: "KL University, Guntur", degree: "B.Tech in Computer Science", year: "2022 - 2026 | Pursuing" },
     { img: sriChaitanyaImage, school: "Sri Chaitanya Junior College", degree: "Higher Secondary | S.S.C", year: "2020 - 2022 | Completed" },
     { img: drGowthamImage, school: "Dr. K.K.R’s Gowtham School", degree: "10th | C.B.S.E", year: "2019 - 2020 | Completed" }
   ];
