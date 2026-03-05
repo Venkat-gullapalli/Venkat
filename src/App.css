@@ -452,3 +452,12 @@ footer { padding: 4rem; text-align: center; color: var(--dim-text); border-top: 
   box-shadow: 0 15px 45px rgba(94,234,212,0.65);
   transform: translateY(-3px);
 }
+/* ===== SHOW FULL ACHIEVEMENT IMAGE ===== */
+
+.achieve-bg{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* show full image instead of cropping */
+  object-position: center;
+  background: #000;
+}
