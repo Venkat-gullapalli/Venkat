@@ -19,7 +19,8 @@ import sriChaitanyaImage from './assets/sri-chaitanya.jpeg';
 import drGowthamImage from './assets/dr-gowtham.jpg';
 import hackImage from './assets/hack.jpg';
 import hackathonImage from './assets/hackathon.jpg';
-import ideathonImage from './assets/ideathon.jpg'; 
+import ideathonImage from './assets/ideathon.jpg';
+import texpoImage from './assets/texpo.jpg';
 
 function App() {
   const [expandedProject, setExpandedProject] = useState(null);
@@ -40,13 +41,34 @@ function App() {
   ];
 
   const achievements = [
-    { name: "HackAP Hackathon", rank: "3rd Place", image: hackImage, description: "Awarded for predictive maintenance solutions focused on infrastructure monitoring." },
-    { name: "Amaravati Drone Summit 2024", rank: "3rd Place", image: hackathonImage, description: "Recognized for innovative UAV-based crack detection using deep learning." },
-    { name: "Ideathon 2023", rank: "4th Place", image: ideathonImage, description: "Recognized for impactful idea presentation and practical feasibility." }
-  ];
+    { 
+    name: "TEXPO'26 - INFINITUS", 
+    rank: "Runner-Up 🥈", 
+    image: texpoImage, 
+    description: "Secured Runner-Up position at TEXPO’26 during INFINITUS’26 organized by SRM-AP." 
+  },
+  { 
+    name: "HackAP Hackathon", 
+    rank: "3rd Place", 
+    image: hackImage, 
+    description: "Awarded for predictive maintenance solutions focused on infrastructure monitoring." 
+  },
+  { 
+    name: "Amaravati Drone Summit 2024", 
+    rank: "3rd Place", 
+    image: hackathonImage, 
+    description: "Recognized for innovative UAV-based crack detection using deep learning." 
+  },
+  { 
+    name: "Ideathon 2023", 
+    rank: "4th Place", 
+    image: ideathonImage, 
+    description: "Recognized for impactful idea presentation and practical feasibility." 
+  },
+];
 
   const education = [
-    { img: klUniversityImage, school: "KL University, Guntur", degree: "B.Tech in Computer Science", year: "2022 - 2026 | Pursuing" },
+    { img: klUniversityImage, school: "KL University, Guntur", degree: "B.E in Computer Science", year: "2022 - 2026 | Pursuing" },
     { img: sriChaitanyaImage, school: "Sri Chaitanya Junior College", degree: "Higher Secondary | S.S.C", year: "2020 - 2022 | Completed" },
     { img: drGowthamImage, school: "Dr. K.K.R’s Gowtham School", degree: "10th | C.B.S.E", year: "2019 - 2020 | Completed" }
   ];
@@ -192,7 +214,7 @@ function App() {
         </section>
       </main>
 
-      <footer><p>© 2026 Designed with ❤️ By Venkat Chowdary</p></footer>
+      <footer><p>© 2026 Designed with By Venkat Chowdary</p></footer>
     </div>
   );
 }
