@@ -461,3 +461,28 @@ footer { padding: 4rem; text-align: center; color: var(--dim-text); border-top: 
   object-position: center;
   background: #000;
 }
+/* ===== FIX: ALWAYS SHOW ACHIEVEMENT CONTENT ===== */
+
+/* Make image visible always */
+.achieve-bg {
+  opacity: 1 !important;
+  filter: grayscale(0%) !important;
+  transform: none !important;
+}
+
+/* Always show description */
+.detail-text {
+  max-height: 200px !important;
+  opacity: 1 !important;
+  margin-top: 1rem;
+}
+
+/* Remove hover dependency */
+.achieve-box:hover .achieve-bg {
+  transform: none;
+}
+
+/* Optional: reduce dark overlay so content is clearer */
+.achieve-content {
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+}
