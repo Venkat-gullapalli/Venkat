@@ -161,11 +161,18 @@ function App() {
           <h2 className="heading">My <span>Skills</span></h2>
           <div className="skills-grid">
             {[
-              { img: pythonLogo, name: 'Python' }, { img: reactLogo, name: 'ReactJS' },
-              { img: aiLogo, name: 'AI' }, { img: droneLogo, name: 'Drone' },
-              { img: javaLogo, name: 'Java' }, { img: flaskLogo, name: 'Flask' },
-              { img: canvaLogo, name: 'Canva' }, { img: figmaLogo, name: 'Figma' }
-            ].map(skill => (
+  { img: pythonLogo, name: 'Python' }, { img: reactLogo, name: 'ReactJS' },
+  { img: aiLogo, name: 'AI' }, { img: droneLogo, name: 'Drone' },
+  { img: javaLogo, name: 'Java' }, { img: flaskLogo, name: 'Flask' },
+  { img: canvaLogo, name: 'Canva' }, { img: figmaLogo, name: 'Figma' }
+]
+.concat([
+  { img: pythonLogo, name: 'Python' }, { img: reactLogo, name: 'ReactJS' },
+  { img: aiLogo, name: 'AI' }, { img: droneLogo, name: 'Drone' },
+  { img: javaLogo, name: 'Java' }, { img: flaskLogo, name: 'Flask' },
+  { img: canvaLogo, name: 'Canva' }, { img: figmaLogo, name: 'Figma' }
+])
+.map((skill, index) => (
               <div className="skill-card" key={skill.name}>
                 <div className="icon-box"><img src={skill.img} alt={skill.name} /></div>
                 <p>{skill.name}</p>
