@@ -935,3 +935,38 @@ footer { padding: 4rem; text-align: center; color: var(--dim-text); border-top: 
 .achieve-content {
   background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
 }
+/* ===== SKILLS AUTO MOVE (NO JS CHANGE) ===== */
+
+/* make container hide overflow */
+#skills .skills-grid{
+  display: flex !important;
+  gap: 2.5rem;
+  overflow: hidden;
+  width: max-content;
+  animation: skillScroll 18s linear infinite;
+}
+
+/* prevent wrapping */
+#skills{
+  overflow: hidden;
+}
+
+/* make cards fixed width */
+.skill-card{
+  min-width: 180px;
+}
+
+/* animation */
+@keyframes skillScroll{
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(-60%);
+  }
+}
+
+/* pause on hover (optional) */
+#skills:hover .skills-grid{
+  animation-play-state: paused;
+}
