@@ -970,3 +970,137 @@ footer { padding: 4rem; text-align: center; color: var(--dim-text); border-top: 
 #skills:hover .skills-grid{
   animation-play-state: paused;
 }
+/* ===== CERTIFICATION FLIP CARD (PREMIUM) ===== */
+
+.cert-card{
+  perspective: 1000px;
+  width: 45%;
+}
+
+/* inner wrapper */
+.cert-inner{
+  position: relative;
+  width: 100%;
+  height: 140px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+/* flip on hover */
+.cert-card:hover .cert-inner{
+  transform: rotateY(180deg);
+}
+
+/* front & back */
+.cert-front,
+.cert-back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 18px;
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* front style */
+.cert-front{
+  background: rgba(20,20,20,0.9);
+  border: 1px solid rgba(94,234,212,0.2);
+}
+
+/* back style */
+.cert-back{
+  background: linear-gradient(135deg,#5eead4,#3b82f6);
+  color: #000;
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+/* text styles */
+.cert-back h4{
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+.cert-back p{
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.cert-back span{
+  font-weight: 600;
+}
+
+/* hover glow */
+.cert-card:hover{
+  transform: translateY(-5px);
+}
+/* ===== EDUCATION FLIP CARD ===== */
+
+.edu-card{
+  perspective: 1200px;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* inner wrapper */
+.edu-inner{
+  position: relative;
+  width: 100%;
+  height: 140px;
+  transform-style: preserve-3d;
+  transition: transform 0.7s ease;
+}
+
+/* flip */
+.edu-card:hover .edu-inner{
+  transform: rotateY(180deg);
+}
+
+/* both sides */
+.edu-front,
+.edu-back{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 25px;
+}
+
+/* FRONT */
+.edu-front{
+  background: rgba(20,20,20,0.95);
+  border-left: 5px solid #5eead4;
+}
+
+/* BACK */
+.edu-back{
+  background: linear-gradient(135deg,#5eead4,#3b82f6);
+  color: #000;
+  transform: rotateY(180deg);
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* logo */
+.edu-logo{
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  background: #fff;
+  padding: 6px;
+}
+
+/* hover lift */
+.edu-card:hover{
+  transform: translateY(-6px);
+}
