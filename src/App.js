@@ -186,12 +186,26 @@ function App() {
           <div className="edu-column">
             {education.map((edu, idx) => (
               <div className="edu-card" key={idx}>
-                <img src={edu.img} alt={edu.school} className="edu-logo" />
-                <div className="edu-info">
-                  <h3>{edu.school}</h3>
-                  <p>{edu.degree} | <span>{edu.year}</span></p>
-                </div>
-              </div>
+  <div className="edu-inner">
+
+    {/* FRONT */}
+    <div className="edu-front">
+      <img src={edu.img} alt={edu.school} className="edu-logo" />
+      <div className="edu-info">
+        <h3>{edu.school}</h3>
+        <p>{edu.degree} | <span>{edu.year}</span></p>
+      </div>
+    </div>
+
+    {/* BACK */}
+    <div className="edu-back">
+      <h3>{edu.school}</h3>
+      <p>{edu.degree}</p>
+      <span>{edu.year}</span>
+    </div>
+
+  </div>
+</div>
             ))}
           </div>
         </section>
@@ -222,9 +236,23 @@ function App() {
           <div className="cert-grid">
             {certifications.map((cert, i) => (
               <div className="cert-card" key={i}>
-                <h4>{cert.title}</h4>
-                <p>Issued by: <span>{cert.issuer}</span></p>
-              </div>
+  <div className="cert-inner">
+    
+    {/* FRONT */}
+    <div className="cert-front">
+      <h4>{cert.title}</h4>
+      <p>Issued by: <span>{cert.issuer}</span></p>
+    </div>
+
+    {/* BACK */}
+    <div className="cert-back">
+      <h4>✔ Certified</h4>
+      <p>{cert.title}</p>
+      <span>{cert.issuer}</span>
+    </div>
+
+  </div>
+</div>
             ))}
           </div>
         </section>
