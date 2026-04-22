@@ -293,7 +293,7 @@ function App() {
         </section>
       </main>
 
-      <footer><p>© 2026 Designed with ❤️ By Venkat Chowdary</p></footer>
+      <footer><p>© 2026 Designed By Venkat Chowdary</p></footer>
     </div>
   );
 }
