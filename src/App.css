@@ -1201,3 +1201,50 @@ footer { padding: 4rem; text-align: center; color: var(--dim-text); border-top: 
   }
 
 }
+/* ===== FINAL MOBILE FIX (SKILLS + EDUCATION) ===== */
+
+@media (max-width: 768px){
+
+  /* ===== SKILLS → SWIPE SCROLL ===== */
+  #skills .skills-grid{
+    display: flex !important;
+    overflow-x: auto;
+    gap: 1.5rem;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+    animation: none !important;
+  }
+
+  /* hide scrollbar */
+  #skills .skills-grid::-webkit-scrollbar{
+    display: none;
+  }
+
+  .skill-card{
+    min-width: 140px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+  }
+
+  /* ===== EDUCATION → FIX FLIP BREAK ===== */
+  .edu-inner{
+    transform: none !important;
+    height: auto !important;
+  }
+
+  .edu-card:hover .edu-inner{
+    transform: none !important;
+  }
+
+  .edu-front,
+  .edu-back{
+    position: relative !important;
+    transform: none !important;
+    width: 100%;
+  }
+
+  .edu-back{
+    margin-top: 12px;
+  }
+
+}
