@@ -61,8 +61,8 @@ function App() {
       description: "This project utilizes autonomous drones equipped with AI to monitor animals within predefined boundaries. The system employs object detection algorithms to track animal movement, and if an animal crosses a virtual geofenced boundary, the drone triggers real-time alerts. This helps prevent animals from entering restricted zones or unsafe areas, supporting wildlife management, reducing human-animal conflict, and enhancing safety in agricultural or forest-edge regions."
     },
     {
-      name: "Library Management System",
-      description: "The Library Management System (LMS) aims to streamline the process of managing library resources, including books, users, and transactions, through a web-based application developed using Flask. The system allows for efficient book cataloging, user registration, borrowing, and returning of books, with real-time tracking of book availability. Admins can manage book details, user accounts, and monitor transaction history. The application utilizes a simple, user-friendly interface, ensuring ease of access for both library staff and users."
+  name: "Drone-Based Current Pole Detection System",
+  description: "The Drone-Based Current Pole Detection System is designed to automate the identification and monitoring of electric poles using aerial imagery captured by drones. The system leverages Artificial Intelligence and Computer Vision techniques to detect current poles in real-time and accurately map their locations using GPS coordinates. This helps in efficient infrastructure inspection, maintenance planning, and fault detection in power distribution networks. The application processes drone-captured images or video streams, identifies poles using trained deep learning models (such as YOLO), and visualizes their positions on a map interface. Admins or operators can monitor detected poles, analyze their conditions, and generate reports, making the system highly useful for smart grid management and reducing manual inspection efforts."
     }
   ];
 
