@@ -1104,3 +1104,100 @@ footer { padding: 4rem; text-align: center; color: var(--dim-text); border-top: 
 .edu-card:hover{
   transform: translateY(-6px);
 }
+/* ===== MOBILE RESPONSIVENESS FIX ===== */
+
+@media (max-width: 768px){
+
+  /* ===== HERO SECTION ===== */
+  .hero-container{
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .glow-border{
+    width: 260px;
+    height: 260px;
+  }
+
+  .hero-text h1{
+    font-size: 2.5rem;
+  }
+
+  .hero-text p{
+    font-size: 0.95rem;
+  }
+
+  /* ===== NAVBAR ===== */
+  .navbar{
+    padding: 1rem;
+  }
+
+  .navbar ul{
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar ul a{
+    font-size: 0.75rem;
+  }
+
+  /* ===== SKILLS ===== */
+  #skills .skills-grid{
+    animation: none; /* stop auto scroll on mobile */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .skill-card{
+    min-width: 120px;
+    padding: 1.5rem;
+  }
+
+  /* ===== EDUCATION FLIP FIX ===== */
+  .edu-inner{
+    height: auto;
+  }
+
+  /* disable flip on mobile (important UX) */
+  .edu-card:hover .edu-inner{
+    transform: none;
+  }
+
+  .edu-front,
+  .edu-back{
+    position: relative;
+    transform: none;
+  }
+
+  .edu-back{
+    margin-top: 10px;
+  }
+
+  /* ===== CERTIFICATIONS ===== */
+  .cert-grid::before{
+    left: 10px;
+  }
+
+  .cert-card{
+    width: 100%;
+    margin-left: 25px;
+  }
+
+  .cert-card:nth-child(even),
+  .cert-card:nth-child(odd){
+    align-self: flex-start;
+  }
+
+  /* ===== PROJECTS ===== */
+  .project-header h3{
+    font-size: 1.2rem;
+  }
+
+  /* ===== CONTACT ===== */
+  .contact-container{
+    flex-direction: column;
+  }
+
+}
