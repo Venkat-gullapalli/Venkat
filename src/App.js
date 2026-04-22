@@ -3,7 +3,6 @@ import './App.css';
 import ResumePDF from './resume.pdf';
 import MyPhoto from './assets/venkat.jpg';
 
-// Technology Logos
 import pythonLogo from './assets/python.png';
 import reactLogo from './assets/React.png';
 import aiLogo from './assets/ai.png';
@@ -13,7 +12,6 @@ import flaskLogo from './assets/flask.png';
 import canvaLogo from './assets/canva.png';
 import figmaLogo from './assets/figma.png';
 
-// Institution & Award Images
 import klUniversityImage from './assets/kl.png';
 import sriChaitanyaImage from './assets/sri-chaitanya.jpeg';
 import drGowthamImage from './assets/dr-gowtham.jpg';
@@ -22,8 +20,36 @@ import hackathonImage from './assets/hackathon.jpg';
 import ideathonImage from './assets/ideathon.jpg';
 import texpoImage from './assets/texpo.jpg';
 
+const DroneSVG = () => (
+  <svg width="110" height="64" viewBox="0 0 90 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="18" cy="14" rx="14" ry="5" fill="rgba(94,234,212,0.12)" stroke="#5eead4" strokeWidth="0.8"/>
+    <ellipse cx="72" cy="14" rx="14" ry="5" fill="rgba(94,234,212,0.12)" stroke="#5eead4" strokeWidth="0.8"/>
+    <ellipse cx="18" cy="38" rx="14" ry="5" fill="rgba(94,234,212,0.12)" stroke="#5eead4" strokeWidth="0.8"/>
+    <ellipse cx="72" cy="38" rx="14" ry="5" fill="rgba(94,234,212,0.12)" stroke="#5eead4" strokeWidth="0.8"/>
+    <line x1="18" y1="14" x2="32" y2="26" stroke="#5eead4" strokeWidth="1.2"/>
+    <line x1="72" y1="14" x2="58" y2="26" stroke="#5eead4" strokeWidth="1.2"/>
+    <line x1="18" y1="38" x2="32" y2="26" stroke="#5eead4" strokeWidth="1.2"/>
+    <line x1="72" y1="38" x2="58" y2="26" stroke="#5eead4" strokeWidth="1.2"/>
+    <rect x="28" y="20" width="34" height="12" rx="4" fill="#0d0d0d" stroke="#5eead4" strokeWidth="1"/>
+    <rect x="40" y="22" width="10" height="8" rx="2" fill="rgba(94,234,212,0.25)"/>
+    <line x1="45" y1="32" x2="45" y2="44" stroke="#5eead4" strokeWidth="1"/>
+    <circle cx="45" cy="47" r="3" fill="rgba(94,234,212,0.5)" stroke="#5eead4" strokeWidth="0.8"/>
+    <circle cx="18" cy="14" r="3" fill="#5eead4"/>
+    <circle cx="72" cy="14" r="3" fill="#5eead4"/>
+    <circle cx="18" cy="38" r="3" fill="#3b82f6"/>
+    <circle cx="72" cy="38" r="3" fill="#3b82f6"/>
+  </svg>
+);
+
 function App() {
+  const [showLanding, setShowLanding] = useState(true);
+  const [exiting, setExiting] = useState(false);
   const [expandedProject, setExpandedProject] = useState(null);
+
+  const handleEnter = () => {
+    setExiting(true);
+    setTimeout(() => setShowLanding(false), 900);
+  };
 
   const projects = [
     {
@@ -36,44 +62,23 @@ function App() {
     },
     {
       name: "Library Management System",
-      description: "The Library Management System (LMS) aims to streamline the process of managing library resources, including books, users, and transactions, through a web-based application developed using Flask. The system allows for efficient book cataloging, user registration, borrowing, and returning of books, with real-time tracking of book availability. Admins can manage book details, user accounts, and monitor transaction history. The application utilizes a simple, user-friendly interface, ensuring ease of access for both library staff and users. This solution improves operational efficiency, reduces manual workload, and enhances user experience in managing library resources."
+      description: "The Library Management System (LMS) aims to streamline the process of managing library resources, including books, users, and transactions, through a web-based application developed using Flask. The system allows for efficient book cataloging, user registration, borrowing, and returning of books, with real-time tracking of book availability. Admins can manage book details, user accounts, and monitor transaction history. The application utilizes a simple, user-friendly interface, ensuring ease of access for both library staff and users."
     }
   ];
 
   const achievements = [
-    { 
-    name: "TEXPO'26 - INFINITUS", 
-    rank: "Runner-Up 🥈", 
-    image: texpoImage, 
-    description: "Secured Runner-Up position at TEXPO’26 during INFINITUS’26 organized by SRM-AP." 
-  },
-  { 
-    name: "HackAP Hackathon", 
-    rank: "3rd Place", 
-    image: hackImage, 
-    description: "Awarded for predictive maintenance solutions focused on infrastructure monitoring." 
-  },
-  { 
-    name: "Amaravati Drone Summit 2024", 
-    rank: "3rd Place", 
-    image: hackathonImage, 
-    description: "Recognized for innovative UAV-based crack detection using deep learning." 
-  },
-  { 
-    name: "Ideathon 2023", 
-    rank: "4th Place", 
-    image: ideathonImage, 
-    description: "Recognized for impactful idea presentation and practical feasibility." 
-  },
-];
+    { name: "TEXPO'26 - INFINITUS", rank: "Runner-Up 🥈", image: texpoImage, description: "Secured Runner-Up position at TEXPO'26 during INFINITUS'26 organized by SRM-AP." },
+    { name: "HackAP Hackathon", rank: "3rd Place", image: hackImage, description: "Awarded for predictive maintenance solutions focused on infrastructure monitoring." },
+    { name: "Amaravati Drone Summit 2024", rank: "3rd Place", image: hackathonImage, description: "Recognized for innovative UAV-based crack detection using deep learning." },
+    { name: "Ideathon 2023", rank: "4th Place", image: ideathonImage, description: "Recognized for impactful idea presentation and practical feasibility." },
+  ];
 
   const education = [
     { img: klUniversityImage, school: "KL University, Guntur", degree: "B.E in Computer Science", year: "2022 - 2026 | Pursuing" },
     { img: sriChaitanyaImage, school: "Sri Chaitanya Junior College", degree: "Higher Secondary | S.S.C", year: "2020 - 2022 | Completed" },
-    { img: drGowthamImage, school: "Dr. K.K.R’s Gowtham School", degree: "10th | C.B.S.E", year: "2019 - 2020 | Completed" }
+    { img: drGowthamImage, school: "Dr. K.K.R's Gowtham School", degree: "10th | C.B.S.E", year: "2019 - 2020 | Completed" }
   ];
 
-  // Certifications data to be displayed
   const certifications = [
     { title: "AWS Certified Cloud Practitioner", issuer: "AWS" },
     { title: "Azure AI Fundamentals", issuer: "Microsoft" },
@@ -81,8 +86,48 @@ function App() {
     { title: "RPA Professional 2023", issuer: "Automation Anywhere" }
   ];
 
+  if (showLanding) {
+    return (
+      <div className={`landing-page ${exiting ? 'landing-exit' : ''}`}>
+        <div className="landing-grid"></div>
+        <div className="landing-scan"></div>
+        <div className="landing-glow landing-glow-left"></div>
+        <div className="landing-glow landing-glow-right"></div>
+
+        <div className="landing-corner lc-tl"></div>
+        <div className="landing-corner lc-tr"></div>
+        <div className="landing-corner lc-bl"></div>
+        <div className="landing-corner lc-br"></div>
+        <div className="landing-blink lb-1"></div>
+        <div className="landing-blink lb-2"></div>
+
+        <div className="drone-wrap">
+          <div className="drone-trail"></div>
+          <div className="drone-signal"></div>
+          <div className="drone-beam"></div>
+          <DroneSVG />
+        </div>
+
+        <div className="landing-content">
+          <p className="landing-tag">Welcome to my portfolio</p>
+          <h1 className="landing-name">Venkat <span>Chowdary</span></h1>
+          <p className="landing-role">AI & Robotics Enthusiast · Drone Developer</p>
+          <p className="landing-sub">Computer Science · KL University</p>
+          <button className="landing-btn" onClick={handleEnter}>
+            Enter Portfolio →
+          </button>
+          <div className="landing-dots">
+            <span className="landing-dot"></span>
+            <span className="landing-dot"></span>
+            <span className="landing-dot"></span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="App">
+    <div className="App portfolio-fadein">
       <header className="navbar">
         <ul>
           <li><a href="#about">ABOUT</a></li>
@@ -106,7 +151,7 @@ function App() {
             <div className="hero-text">
               <h5>Hi There, I'm</h5>
               <h1>Venkat <span>Chowdary</span></h1>
-              <p>I’m G.Venkat, a Computer Science student dedicated to the intersection of AI and Robotics. My work focuses on pushing the boundaries of drone technology and automation—from designing custom UAVs to implementing YOLO-based computer vision for real-world infrastructure challenges. I’m driven by a curiosity to see how intelligent machines can reshape our world.</p>
+              <p>I'm G.Venkat, a Computer Science student dedicated to the intersection of AI and Robotics. My work focuses on pushing the boundaries of drone technology and automation—from designing custom UAVs to implementing YOLO-based computer vision for real-world infrastructure challenges. I'm driven by a curiosity to see how intelligent machines can reshape our world.</p>
               <a href={ResumePDF} target="_blank" rel="noopener noreferrer" className="btn-primary">View CV</a>
             </div>
           </div>
@@ -148,8 +193,8 @@ function App() {
           <h2 className="heading">Featured <span>Projects</span></h2>
           <div className="projects-column">
             {projects.map((project, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className={`project-item-card ${expandedProject === index ? 'expanded' : ''}`}
                 onClick={() => setExpandedProject(expandedProject === index ? null : index)}
               >
@@ -165,7 +210,6 @@ function App() {
           </div>
         </section>
 
-        {/* ADDED CERTIFICATIONS SECTION HERE */}
         <section id="certifications" className="section">
           <h2 className="heading">Certifications</h2>
           <div className="cert-grid">
@@ -214,7 +258,7 @@ function App() {
         </section>
       </main>
 
-      <footer><p>© 2026 Designed with By Venkat Chowdary</p></footer>
+      <footer><p>© 2026 Designed with ❤️ By Venkat Chowdary</p></footer>
     </div>
   );
 }
