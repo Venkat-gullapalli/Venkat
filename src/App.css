@@ -1298,3 +1298,26 @@ footer { padding: 4rem; text-align: center; color: var(--dim-text); border-top: 
   }
 
 }
+.form-success {
+  text-align: center;
+  padding: 3rem 2rem;
+  background: #f5f5f5;
+  border-radius: 18px;
+  border: 1px solid #e0e0e0;
+}
+
+.form-success h3 {
+  font-size: 1.5rem;
+  color: #000000;
+  margin-bottom: 0.8rem;
+}
+
+.form-success p {
+  color: #444444;
+}
+
+.form-error {
+  color: #dc2626;
+  font-size: 0.9rem;
+  margin-top: -0.5rem;
+}
