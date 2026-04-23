@@ -54,7 +54,7 @@ function App() {
     const form = e.target;
     const data = new FormData(form);
     try {
-      const res = await fetch('https://formspree.io/f/mqkgrzab', {
+      const res = await fetch('https://formspree.io/f/xqewggqk', {
         method: 'POST',
         body: data,
         headers: { Accept: 'application/json' }
@@ -314,7 +314,7 @@ function App() {
       ) : (
         <form
           className="modern-form"
-          action="https://formspree.io/mqkgrzab"
+          action="https://formspree.io/f/xqewggqk"
           method="POST"
           onSubmit={handleSubmit}
         >
