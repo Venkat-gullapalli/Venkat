@@ -46,7 +46,31 @@ function App() {
   const [exiting, setExiting] = useState(false);
   const [expandedProject, setExpandedProject] = useState(null);
 
-  const handleEnter = () => {
+  // ✅ ADD THESE TWO RIGHT HERE
+  const [formStatus, setFormStatus] = useState('idle');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setFormStatus('sending');
+    const form = e.target;
+    const data = new FormData(form);
+    try {
+      const res = await fetch('https://formspree.io/f/xyzabcde', {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' }
+      });
+      if (res.ok) {
+        setFormStatus('success');
+        form.reset();
+      } else {
+        setFormStatus('error');
+      }
+    } catch {
+      setFormStatus('error');
+    }
+  };
+
+  const handleEnter = () => {   // your existing code continues...
     setExiting(true);
     setTimeout(() => setShowLanding(false), 900);
   };
@@ -274,26 +298,43 @@ function App() {
         </section>
 
         <section id="contact" className="section">
-          <h2 className="heading">Contact <span>Me</span></h2>
-          <div className="contact-container">
-            <div className="contact-info">
-              <p><strong>Email:</strong> venkatchowdary144256@gmail.com</p>
-              <p><strong>Phone:</strong> +91 9247456666</p>
-              <p><strong>Location:</strong> Vijayawada, India</p>
-            </div>
-            <div className="contact-form-wrapper">
-              <form className="modern-form">
-                <input type="text" placeholder="Your Name" required />
-                <input type="email" placeholder="Your Email" required />
-                <textarea placeholder="Your Message" rows="6" required></textarea>
-                <button type="submit" className="btn-gradient">SEND MESSAGE</button>
-              </form>
-            </div>
-          </div>
-        </section>
+  <h2 className="heading">Contact <span>Me</span></h2>
+  <div className="contact-container">
+    <div className="contact-info">
+      <p><strong>Email:</strong> venkatchowdary144256@gmail.com</p>
+      <p><strong>Phone:</strong> +91 9247456666</p>
+      <p><strong>Location:</strong> Vijayawada, India</p>
+    </div>
+    <div className="contact-form-wrapper">
+      {formStatus === 'success' ? (
+        <div className="form-success">
+          <h3>✅ Message Sent!</h3>
+          <p>Thanks for reaching out. I'll get back to you soon.</p>
+        </div>
+      ) : (
+        <form
+          className="modern-form"
+          action="https://formspree.io/f/xyzabcde"
+          method="POST"
+          onSubmit={handleSubmit}
+        >
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+          <button type="submit" className="btn-gradient" disabled={formStatus === 'sending'}>
+            {formStatus === 'sending' ? 'SENDING...' : 'SEND MESSAGE'}
+          </button>
+          {formStatus === 'error' && (
+            <p className="form-error">Something went wrong. Please try again.</p>
+          )}
+        </form>
+      )}
+    </div>
+  </div>
+</section>
       </main>
 
-      <footer><p>© 2026 Designed By Venkat Chowdary</p></footer>
+      <footer><p>© 2026 Designed with By Venkat Chowdary</p></footer>
     </div>
   );
 }
