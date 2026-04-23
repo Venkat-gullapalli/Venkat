@@ -134,7 +134,7 @@ function App() {
 
         <div className="landing-content">
           <p className="landing-tag">Welcome to my portfolio</p>
-          <h1 className="landing-name">Venkat <span>Chowdary</span></h1>
+          <h1 className="landing-name">Gullapalli <span>Venkat</span></h1>
           <p className="landing-role">AI & Robotics Enthusiast · Drone Developer</p>
           <p className="landing-sub">Computer Science · KL University</p>
           <button className="landing-btn" onClick={handleEnter}>
@@ -169,7 +169,7 @@ function App() {
           <div className="hero-container">
             <div className="hero-visual">
               <div className="glow-border">
-                <img src={MyPhoto} alt="Venkat Chowdary" className="profile-img" />
+                <img src={MyPhoto} alt="G.Venkat" className="profile-img" />
               </div>
             </div>
             <div className="hero-text">
