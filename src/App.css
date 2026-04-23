@@ -1321,3 +1321,66 @@ footer { padding: 4rem; text-align: center; color: var(--dim-text); border-top: 
   font-size: 0.9rem;
   margin-top: -0.5rem;
 }
+/* ===== EDUCATION CARD (NO FLIP) ===== */
+
+.edu-card {
+  perspective: none !important;
+  background: rgba(20, 20, 20, 0.95) !important;
+  border-radius: 18px !important;
+  border: none !important;
+  border-left: 5px solid #5eead4 !important;
+  padding: 25px !important;
+  transform: none !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.edu-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: 0 10px 40px rgba(94, 234, 212, 0.15) !important;
+}
+
+.edu-inner {
+  transform: none !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px !important;
+}
+
+.edu-front {
+  position: relative !important;
+  transform: none !important;
+  backface-visibility: visible !important;
+  width: 100% !important;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px !important;
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+.edu-back {
+  display: none !important;
+}
+
+.edu-logo {
+  width: 70px !important;
+  height: 70px !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  padding: 6px !important;
+  flex-shrink: 0 !important;
+}
+
+.edu-front h3 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.edu-front p {
+  color: #a6a6a6;
+  font-size: 0.9rem;
+}
